@@ -2,13 +2,16 @@
 # Cookbook Name:: pxe_install_server
 # Templates:: dhcpd.conf
 #
+
+default-lease-time 600;
+max-lease-time 7200;
+option broadcast-address <%= node['pxe_install_server']['pxeserver_broadcast'] %>;
+option routers <%= node['pxe_install_server']['pxeserver_router'] %>;
+option domain-name-servers <%= node['pxe_install_server']['pxeserver_nameserver'] %>;
+
 subnet <%= node['pxe_install_server']['pxeserver_address'] %> netmask <%= node['pxe_install_server']['pxeserver_netmask'] %> {
   range <%= node['pxe_install_server']['pxeserver_range_min'] %> <%= node['pxe_install_server']['pxeserver_range_max'] %>;
-  option broadcast-address <%= node['pxe_install_server']['pxeserver_broadcast'] %>;
-  option routers <%= node['pxe_install_server']['pxeserver_router'] %>;
-  option domain-name-servers <%= node.pxe_install_server.pxeserver_nameserver %>;
 }
-
 
 <% @targets.each do |target| %>
 host <%= target["hostname"] %>.<%= target["ip"] %> {
@@ -16,6 +19,8 @@ host <%= target["hostname"] %>.<%= target["ip"] %> {
   filename "pxelinux.0-debian-7.1-amd64";
   <% elsif target["release"].include?("debian-7.1-i386") %>
   filename "pxelinux.0-debian-7.1-i386";
+  <% elsif target["release"].include?("ubuntu-16.04-amd64") %>
+  filename "pxelinux.0-ubuntu-16.04-amd64";
   <% elsif target["release"].include?("ubuntu-14.04-amd64") %>
   filename "pxelinux.0-ubuntu-14.04-amd64";
   <% elsif target["release"].include?("ubuntu-14.04-i386") %>
