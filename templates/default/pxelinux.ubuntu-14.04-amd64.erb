@@ -1,6 +1,0 @@
-default linux
-
-label linux
-  kernel ubuntu-installer/amd64/linux
-  append auto=true priority=critical preseed/locale=en_US kbd-chooser/method=us vga=normal initrd=ubuntu-installer/amd64/initrd.gz DEBCONF_DEBUG=5 -- auto url=tftp://<%= node[:pxe_install_server][:pxeserver_service_host] %>/preseed.ubuntu.cfg interface=eth0
-
