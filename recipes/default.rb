@@ -14,7 +14,7 @@ execute "apt-get-update-periodic" do
 end
 
 package "tftpd-hpa"
-package "dhcp3-server"
+package "isc-dhcp-server"
 
 node['pxe_install_server']['releases'].each do |release|
   dist = release[:dist]
