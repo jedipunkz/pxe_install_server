@@ -26,12 +26,8 @@ default['pxe_install_server']['data_bag_name'] = "development"
 
 # distro list : please set netboot.tar.gz URL
 default['pxe_install_server']['releases'] = [
-    { :dist => "ubuntu-14.04-amd64",
-      :path => "http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/netboot.tar.gz" },
-    { :dist => "ubuntu-14.04-i386",
-      :path => "http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-i386/current/images/netboot/netboot.tar.gz" },
+    { :dist => "ubuntu-16.04-amd64",
+      :path => "http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/current/images/netboot/netboot.tar.gz" },
     { :dist => "debian-7.1-amd64",
       :path => "http://ftp.debian.org/debian/dists/wheezy/main/installer-amd64/current/images/netboot/netboot.tar.gz" },
-    { :dist => "debian-7.1-i386",
-      :path => "http://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/netboot.tar.gz" }
 ]

@@ -1,4 +1,4 @@
-name             "pxe_instalL_server"
+name             "pxe_install_server"
 maintainer       "Tomokazu HIRAI" 
 maintainer_email "Tomokazu HIRAI"
 license          "Apache 2.0"
