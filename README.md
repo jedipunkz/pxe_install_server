@@ -23,7 +23,7 @@ Supporting Server OS
 Supporting Target OS
 ----
 
-* Debian Gnu/Linux 7.1
+* Debian Gnu/Linux 9.2
 * Ubuntu Server 16.04 LTS
 
 And maybe, you can add any distro to attribute file. Please fork it and fun. :D
@@ -92,6 +92,7 @@ cookbook.
 Version
 ----
 
+* 0.0.6 : added supporting debian 9.2 and deleted debian 7.2
 * 0.0.5 : added suporting ubuntu 16.04 for target os.
 * 0.0.4 : supported ubuntu 14.04 for target os.
 * 0.0.3 : supported to specify user account for preseed.
