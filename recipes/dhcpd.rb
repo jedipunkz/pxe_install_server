@@ -6,7 +6,7 @@
 
 package "isc-dhcp-server"
 
-targets = data_bag_item('pxe_targets', node["pxe_install_server"]["data_bag_name"])['targets']
+targets = data_bag_item('development', node["pxe_install_server"]["data_bag_name"])['targets']
 
 template "/etc/dhcp/dhcpd.conf" do
   source "dhcpd.conf.erb"
