@@ -15,11 +15,7 @@ subnet <%= node['pxe_install_server']['pxeserver_address'] %> netmask <%= node['
 
 <% @targets.each do |target| %>
 host <%= target["hostname"] %>.<%= target["ip"] %> {
-  <% if target["release"].include?("debian-9.2-amd64") %>
-  filename "pxelinux.0-debian-9.2-amd64";
-  <% elsif target["release"].include?("ubuntu-16.04-amd64") %>
-  filename "pxelinux.0-ubuntu-16.04-amd64";
-  <% end %>
+  filename "<%= target["release"] =%>/pxelinux.0";
   hardware ethernet <%= target["mac"] %>;
 }
 <% end %>
