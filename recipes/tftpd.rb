@@ -23,7 +23,7 @@ node['pxe_install_server']['releases'].each do |release|
   end
 end
 
-targets = data_bag_item('pxe_targets', node["pxe_install_server"]["data_bag_name"])['targets']
+targets = data_bag_item('development', node["pxe_install_server"]["data_bag_name"])['targets']
 
 targets.each do |target|
   mac = target['mac'].downcase.gsub(/:/, '-')

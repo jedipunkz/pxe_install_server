@@ -3,6 +3,14 @@ d-i debian-installer/locale string ja_JP.utf8
 d-i console-setup/ask_detect boolean false
 d-i console-setup/layout string USA
 
+# Keyboard selection.
+# Disable automatic (interactive) keymap detection.
+d-i console-setup/ask_detect boolean false
+d-i keyboard-configuration/xkb-keymap select us
+# To select a variant of the selected layout:
+#d-i keyboard-configuration/xkb-keymap select us(dvorak)
+# d-i keyboard-configuration/toggle select No toggling
+
 #d-i netcfg/get_hostname string dummy
 d-i netcfg/get_hostname string unassigned-hostname
 d-i netcfg/get_domain string unassigned-domain
