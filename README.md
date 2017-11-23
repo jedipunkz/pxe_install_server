@@ -1,4 +1,4 @@
-PXE Installation Cookbook
+Coobook for building PXE Installation Environment
 ==================
 
 Overview
