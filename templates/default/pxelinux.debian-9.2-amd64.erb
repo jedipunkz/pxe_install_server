@@ -2,5 +2,5 @@ default linux
 
 label linux
   kernel debian-installer/amd64/linux
-  append auto=true priority=critical preseed/locale=en_US kbd-chooser/method=us vga=normal initrd=debian-installer/amd64/initrd.gz auto preseed/url=tftp://<%= node[:pxe_install_server][:pxeserver_service_host] %>/preseed.debian.cfg
+  append auto=true priority=critical preseed/locale=en_US kbd-chooser/method=us vga=normal initrd=debian-installer/amd64/initrd.gz auto preseed/url=tftp://<%= node[:pxe_install_server][:pxeserver_service_host] %>/<%= @release %>/preseed.debian.cfg
 
