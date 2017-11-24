@@ -51,7 +51,7 @@ targets.each do |target|
   end
 
   template "#{node["pxe_install_server"]["tftp_dir"]}/#{target['release']}/preseed.debian.cfg" do
-    source "preseed.ubuntu.cfg.erb"
+    source "preseed.debian.cfg.erb"
     mode 0644
     variables({
       :fullname => target['user-fullname'],
@@ -59,7 +59,7 @@ targets.each do |target|
       :passwd   => target['user-password-crypted'],
       :release => target['release']
     })
-    only_if { target["release"].include?("ubuntu") }
+    only_if { target["release"].include?("debian") }
   end
 end
 
